@@ -94,7 +94,8 @@ const route = useRoute();
 
 const getWeatherData = async () => {
   try {
-    const openWeatherApiKey = 'b059e5169ecc3624f8deb80eea598550';    
+
+    const openWeatherApiKey = import.meta.env.VITE_OPEN_WEATHER_API_KEY;    
     const weatherData = await axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${route.query.lat}&lon=${route.query.lng}&appid=${openWeatherApiKey}&units=metric`);
 
     // cal current date & time
